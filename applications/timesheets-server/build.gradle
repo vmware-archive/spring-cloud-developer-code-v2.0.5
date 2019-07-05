@@ -4,7 +4,4 @@ dependencies {
     implementation project(':components:timesheets')
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.cloud:spring-cloud-starter-config'
-    implementation "org.springframework.retry:spring-retry"
-    implementation "org.springframework.boot:spring-boot-starter-aop"
 }
