@@ -71,6 +71,5 @@
         <module>components/rest-support</module>
         <module>applications/registration-server</module>
         <module>applications/timesheets-server</module>
-        <module>platform-services/config-server</module>
     </modules>
 </project>
