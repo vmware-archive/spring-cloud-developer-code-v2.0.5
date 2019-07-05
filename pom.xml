@@ -28,6 +28,8 @@
         <junit.version>4.12</junit.version>
         <mockito.version>2.23.4</mockito.version>
         <spring.boot.version>2.1.5.RELEASE</spring.boot.version>
+        <spring.cloud.version>Greenwich.SR1</spring.cloud.version>
+        <spring.cloud.commons.version>2.1.1.RELEASE</spring.cloud.commons.version>
         <spring.version>5.1.7.RELEASE</spring.version>
     </properties>
 
@@ -48,6 +50,18 @@
             <version>${mockito.version}</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <modules>
         <module>components/accounts</module>
