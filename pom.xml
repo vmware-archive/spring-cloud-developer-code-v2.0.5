@@ -74,5 +74,6 @@
         <module>applications/timesheets-server</module>
         <module>platform-services/eureka-server</module>
         <module>platform-services/hystrix-dashboard-server</module>
+        <module>platform-services/turbine-server</module>
     </modules>
 </project>
