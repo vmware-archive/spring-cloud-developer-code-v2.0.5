@@ -21,19 +21,19 @@ public class ProjectClient {
         this.projectInfoCache = new ConcurrentHashMap<>();
     }
 
-    @HystrixCommand(fallbackMethod = "getProjectFromCache")
+    @HystrixCommand(commandKey = "ProjectClient",
+            fallbackMethod = "getProjectFromCache")
     public ProjectInfo getProject(long projectId) {
+        ProjectInfo info = restOperations.getForObject(endpoint + "/projects/" + projectId, ProjectInfo.class);
+        projectInfoCache.put(projectId, info);
         logger.info("Obtained and cached projectInfo for projectId '{}'", projectId);
-
-        ProjectInfo projectInfo = restOperations.getForObject(endpoint + "/projects/" + projectId, ProjectInfo.class);
-        projectInfoCache.put(projectId,projectInfo);
-
-        return projectInfo;
+        return info;
     }
 
+    @HystrixCommand(commandKey = "ProjectClientCache",
+            threadPoolKey = "ProjectClientCache")
     public ProjectInfo getProjectFromCache(long projectId) {
         logger.info("Fell back to using cached project lookup for projectId '{}'", projectId);
-
         return projectInfoCache.get(projectId);
     }
 }
