@@ -1,8 +1,7 @@
-apply from: "$projectDir/../server.gradle"
+description = 'registration-server'
 
 dependencies {
-    compile project(":components:accounts")
-    compile project(":components:projects")
-    compile project(":components:users")
-    compile project(":components:instrumentation")
+    implementation project(':components:accounts')
+    implementation project(':components:users')
+    implementation project(':components:projects')
 }

@@ -2,6 +2,7 @@ package io.pivotal.pal.tracker.accounts;
 
 import io.pivotal.pal.tracker.accounts.data.AccountDataGateway;
 import io.pivotal.pal.tracker.accounts.data.AccountRecord;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,19 +22,19 @@ public class AccountController {
     }
 
     @GetMapping("/accounts")
-    public List<AccountInfo> list(@RequestParam long ownerId) {
-        return gateway.findAllByOwnerId(ownerId)
-            .stream()
-            .map(this::present)
-            .collect(toList());
+    public ResponseEntity<List<AccountInfo>> list(@RequestParam long ownerId) {
+        return ResponseEntity.ok(gateway.findAllByOwnerId(ownerId)
+                .stream()
+                .map(this::present)
+                .collect(toList()));
     }
 
     private AccountInfo present(AccountRecord record) {
         return accountInfoBuilder()
-            .id(record.id)
-            .ownerId(record.ownerId)
-            .name(record.name)
-            .info("account info")
-            .build();
+                .id(record.id)
+                .ownerId(record.ownerId)
+                .name(record.name)
+                .info("account info")
+                .build();
     }
 }

@@ -24,7 +24,7 @@ public class ProjectDataGateway {
     }
 
     public List<ProjectRecord> findAllByAccountId(Long accountId) {
-        return db.values().stream().filter( r -> r.accountId == accountId).collect(Collectors.toList());
+        return db.values().stream().filter(r -> r.accountId == accountId).collect(Collectors.toList());
     }
 
     public ProjectRecord find(long id) {

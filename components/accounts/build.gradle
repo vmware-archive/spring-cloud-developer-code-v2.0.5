@@ -1,6 +1,7 @@
-dependencies {
-    compile project(":components:rest-support")
-    compile project(":components:users")
+description = 'accounts'
 
-    testCompile project(":components:test-support")
+dependencies {
+    implementation project(':components:rest-support')
+    implementation project(':components:users')
 }
+

@@ -1,5 +1,5 @@
+description = 'projects'
+
 dependencies {
-    compile project(":components:rest-support")
-    compile project(":components:instrumentation")
-    testCompile project(":components:test-support")
+    implementation project(':components:rest-support')
 }

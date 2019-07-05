@@ -10,31 +10,31 @@ import java.util.stream.Collectors;
 @Repository
 public class TimeEntryDataGateway {
 
-  private long currentId = 0;
-  private final Map<Long, TimeEntryRecord> db = new HashMap<>();
+    private long currentId = 0;
+    private final Map<Long, TimeEntryRecord> db = new HashMap<>();
 
     public TimeEntryRecord create(TimeEntryFields fields) {
-      long id = ++currentId;
+        long id = ++currentId;
 
-      TimeEntryRecord created = TimeEntryRecord.timeEntryRecordBuilder()
-          .id(id)
-          .projectId(fields.projectId)
-          .userId(fields.userId)
-          .date(fields.date)
-          .hours(fields.hours)
-          .build();
+        TimeEntryRecord created = TimeEntryRecord.timeEntryRecordBuilder()
+                .id(id)
+                .projectId(fields.projectId)
+                .userId(fields.userId)
+                .date(fields.date)
+                .hours(fields.hours)
+                .build();
 
-      db.put(id, created);
+        db.put(id, created);
 
-      return created;
+        return created;
     }
 
     public List<TimeEntryRecord> findAllByUserId(long userId) {
-      return db.values().stream().filter(r -> r.userId == userId).collect(Collectors.toList());
+        return db.values().stream().filter(r -> r.userId == userId).collect(Collectors.toList());
     }
 
     public TimeEntryRecord find(long id) {
-      return db.get(id);
+        return db.get(id);
     }
 
 }
