@@ -41,6 +41,7 @@ subprojects {
             implementation 'org.springframework.boot:spring-boot-starter-actuator'
             implementation 'org.springframework.boot:spring-boot-starter-web'
             implementation "de.codecentric:chaos-monkey-spring-boot:$chaosMonkeyVersion"
+            implementation "org.springframework.cloud:spring-cloud-starter-sleuth"
             testCompile 'org.springframework.boot:spring-boot-starter-test'
         }
 
