@@ -1,5 +1,7 @@
 description = 'timesheets-server'
 
 dependencies {
+    implementation project(':components:rest-support')
     implementation project(':components:timesheets')
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 }
