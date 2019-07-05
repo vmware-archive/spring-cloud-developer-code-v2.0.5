@@ -1,0 +1,6 @@
+description = 'timesheets'
+
+dependencies {
+    implementation project(':components:rest-support')
+}
+

@@ -1,0 +1,7 @@
+description = 'registration-server'
+
+dependencies {
+    implementation project(':components:accounts')
+    implementation project(':components:users')
+    implementation project(':components:projects')
+}

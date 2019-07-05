@@ -1,0 +1,5 @@
+description = 'timesheets-server'
+
+dependencies {
+    implementation project(':components:timesheets')
+}

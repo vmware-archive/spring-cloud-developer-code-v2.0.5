@@ -1,0 +1,5 @@
+description = 'projects'
+
+dependencies {
+    implementation project(':components:rest-support')
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>io.pivotal.pal.tracker</groupId>
+    <artifactId>tracker</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>tracker</name>
+    <description>PAL Tracker Distributed for Spring Cloud</description>
+
+    <properties>
+        <java.version>11</java.version>
+        <assertj.version>3.11.1</assertj.version>
+        <chaos.monkey.version>2.0.2</chaos.monkey.version>
+        <jackson.version>2.9.8</jackson.version>
+        <jaxb.version>2.3.1</jaxb.version>
+        <jaxb.core.version>2.3.0.1</jaxb.core.version>
+        <junit.version>4.12</junit.version>
+        <mockito.version>2.23.4</mockito.version>
+        <spring.boot.version>2.1.5.RELEASE</spring.boot.version>
+        <spring.version>5.1.7.RELEASE</spring.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>components/accounts</module>
+        <module>components/users</module>
+        <module>components/projects</module>
+        <module>components/timesheets</module>
+        <module>components/rest-support</module>
+        <module>applications/registration-server</module>
+        <module>applications/timesheets-server</module>
+    </modules>
+</project>
