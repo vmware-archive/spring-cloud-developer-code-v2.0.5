@@ -16,7 +16,6 @@ import static java.util.stream.Collectors.toList;
 @RestController
 @RequestMapping("/projects")
 public class ProjectController {
-
     private final ProjectDataGateway gateway;
 
     public ProjectController(ProjectDataGateway gateway) {

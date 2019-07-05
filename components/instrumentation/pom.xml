@@ -10,22 +10,32 @@
         <relativePath>../..</relativePath>
     </parent>
 
-    <artifactId>projects</artifactId>
+    <artifactId>instrumentation</artifactId>
     <packaging>jar</packaging>
 
-    <name>projects</name>
+    <name>instrumentation</name>
     <description>PAL Tracker Projects</description>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>rest-support</artifactId>
+            <artifactId>projects</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>${spring.boot.version}</version>
         </dependency>
     </dependencies>
 

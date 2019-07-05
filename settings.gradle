@@ -4,6 +4,8 @@ include(':components:users')
 include(':components:projects')
 include(':components:timesheets')
 include(':components:rest-support')
+include(':components:instrumentation')
 include(':applications:registration-server')
 include(':applications:timesheets-server')
 include(':platform-services:eureka-server')
+
