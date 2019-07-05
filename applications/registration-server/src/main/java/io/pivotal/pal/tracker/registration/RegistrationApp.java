@@ -16,10 +16,12 @@ import static io.pivotal.pal.tracker.projects.data.ProjectFields.projectFieldsBu
 
 @SpringBootApplication
 @ComponentScan({
-        "io.pivotal.pal.tracker.accounts",
-        "io.pivotal.pal.tracker.restsupport",
-        "io.pivotal.pal.tracker.projects",
-        "io.pivotal.pal.tracker.users"
+    "io.pivotal.pal.tracker.accounts",
+    "io.pivotal.pal.tracker.restsupport",
+    "io.pivotal.pal.tracker.projects",
+    "io.pivotal.pal.tracker.users",
+    "io.pivotal.pal.tracker.instrumentation",
+    "io.pivotal.pal.tracker.registration"
 })
 public class RegistrationApp {
     public static void main(String[] args) {
@@ -35,13 +37,13 @@ public class RegistrationApp {
     }
 
     @PostConstruct
-    public void init() {
+    public void init(){
         // Make sure there is data in the registration server when
         // it starts.
         ProjectFields project = projectFieldsBuilder()
-                .accountId(1)
-                .name("Basket Weaving")
-                .build();
+                                    .accountId(1)
+                                    .name("Basket Weaving")
+                                    .build();
         logger.info("**********************************");
         logger.info("Creating project: " + project);
         logger.info("**********************************");

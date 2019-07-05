@@ -1,9 +1,16 @@
-rootProject.name = 'tracker'
-include(':components:accounts')
-include(':components:users')
-include(':components:projects')
-include(':components:timesheets')
-include(':components:rest-support')
-include(':applications:registration-server')
-include(':applications:timesheets-server')
-include(':platform-services:hystrix-dashboard-server')
+rootProject.name = "pal-tracker-distributed"
+
+include "applications:registration-server"
+include "applications:timesheets-server"
+
+include "components:accounts"
+include "components:projects"
+include "components:timesheets"
+include "components:users"
+include "components:instrumentation"
+
+include "components:rest-support"
+include "components:test-support"
+
+include "platform-services:hystrix-dashboard"
+

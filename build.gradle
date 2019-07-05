@@ -1,65 +1,42 @@
-plugins {
-    id 'org.springframework.boot' version '2.1.5.RELEASE' apply false
-}
 
-allprojects {
-    group = 'io.pivotal.pal.tracker'
-    version = '1.0.0'
+buildscript {
+    ext {
+        springBootVersion = "1.5.9.RELEASE"
+        springVersion = "4.3.13.RELEASE"
+        springCloudVersion = 'Edgware.SR2'
+        jacksonVersion ="2.9.3"
+    }
 
-    buildscript {
-        ext {
-            sourceCompatibility = '11'
-            assertJVersion = '3.11.1'
-            chaosMonkeyVersion = '2.0.2'
-            jacksonVersion = '2.9.8'
-            jaxbVersion = '2.3.1'
-            jaxbCoreVersion = '2.3.0.1'
-            junitVersion = '4.12'
-            mockitoVersion = '2.23.4'
-            slf4jVersion = '1.7.26'
-            springBootVersion = '2.1.5.RELEASE'
-            springCloudVersion = 'Greenwich.SR1'
-            springCloudCommonsVersion = '2.1.1.RELEASE'
-            springVersion = '5.1.7.RELEASE'
-        }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
     }
 }
 
 subprojects {
-    apply plugin: 'java-library'
+    group "io.pivotal.pal.tracker"
 
-    if (name.endsWith("-server")) {
-        apply plugin: 'org.springframework.boot'
-        apply plugin: 'io.spring.dependency-management'
-
-        dependencyManagement {
-            imports {
-                mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"
-            }
-        }
-
-        dependencies {
-            implementation 'org.springframework.boot:spring-boot-starter-actuator'
-            implementation 'org.springframework.boot:spring-boot-starter-web'
-            implementation "de.codecentric:chaos-monkey-spring-boot:$chaosMonkeyVersion"
-            testCompile 'org.springframework.boot:spring-boot-starter-test'
-        }
-
-        springBoot {
-            buildInfo()
-        }
-    }
+    apply plugin: "java"
+    defaultTasks "clean", "build"
 
     repositories {
-        mavenLocal()
-        maven {
-            url = 'http://repo.maven.apache.org/maven2'
-        }
+        mavenCentral()
+        jcenter()
     }
 
     dependencies {
-        testCompile "junit:junit:$junitVersion"
-        testCompile "org.assertj:assertj-core:$assertJVersion"
-        testCompile "org.mockito:mockito-core:$mockitoVersion"
+        testCompile "junit:junit:4.12"
+        testCompile "org.mockito:mockito-core:2.13.0"
+        testCompile "org.assertj:assertj-core:3.9.0"
+    }
+
+    test {
+        testLogging {
+            exceptionFormat = 'full'
+        }
     }
 }

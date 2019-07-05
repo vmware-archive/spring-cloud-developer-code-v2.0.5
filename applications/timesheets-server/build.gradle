@@ -1,6 +1,6 @@
-description = 'timesheets-server'
+apply from: "$projectDir/../server.gradle"
 
 dependencies {
-    implementation project(':components:timesheets')
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+    compile "org.springframework.cloud:spring-cloud-starter-hystrix"
+    compile project(":components:timesheets")
 }

@@ -1,5 +1,5 @@
-description = 'users'
-
 dependencies {
-    implementation project(':components:rest-support')
+    compile project(":components:rest-support")
+
+    testCompile project(":components:test-support")
 }
