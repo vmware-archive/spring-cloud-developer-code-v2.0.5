@@ -2,4 +2,5 @@ description = 'timesheets-server'
 
 dependencies {
     implementation project(':components:timesheets')
+    implementation 'org.springframework.retry:spring-retry'
 }
