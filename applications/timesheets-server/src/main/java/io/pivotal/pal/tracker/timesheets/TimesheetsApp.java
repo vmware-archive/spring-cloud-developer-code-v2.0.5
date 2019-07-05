@@ -1,16 +1,15 @@
 package io.pivotal.pal.tracker.timesheets;
 
-import io.pivotal.pal.tracker.restsupport.ServiceLocator;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestOperations;
 
 import java.util.TimeZone;
 
-@EnableEurekaClient
+
 @SpringBootApplication
 @ComponentScan({"io.pivotal.pal.tracker.timesheets", "io.pivotal.pal.tracker.restsupport"})
 public class TimesheetsApp {
@@ -22,10 +21,9 @@ public class TimesheetsApp {
 
     @Bean
     ProjectClient projectClient(
-            ServiceLocator serviceLocator,
-            RestOperations restOperations
-
+            RestOperations restOperations,
+            @Value("${registration.server.endpoint}") String registrationEndpoint
     ) {
-        return new ProjectClient(serviceLocator,restOperations);
+        return new ProjectClient(restOperations, registrationEndpoint);
     }
 }

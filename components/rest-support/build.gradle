@@ -6,6 +6,4 @@ dependencies {
     api "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
     api "org.springframework:spring-web:$springVersion"
     api "org.springframework:spring-context:$springVersion"
-    implementation "org.springframework.cloud:spring-cloud-commons:$springCloudCommonsVersion"
-    implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:$springCloudEurekaClientVersion"
 }

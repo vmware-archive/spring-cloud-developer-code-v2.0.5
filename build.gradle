@@ -16,11 +16,9 @@ allprojects {
             jaxbCoreVersion = '2.3.0.1'
             junitVersion = '4.12'
             mockitoVersion = '2.23.4'
-            slf4jVersion = '1.7.25'
             springBootVersion = '2.1.5.RELEASE'
             springCloudVersion = 'Greenwich.SR1'
             springCloudCommonsVersion = '2.1.1.RELEASE'
-            springCloudEurekaClientVersion = '2.1.1.RELEASE'
             springVersion = '5.1.7.RELEASE'
         }
     }
@@ -42,6 +40,7 @@ subprojects {
         dependencies {
             implementation 'org.springframework.boot:spring-boot-starter-actuator'
             implementation 'org.springframework.boot:spring-boot-starter-web'
+            implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
             implementation "de.codecentric:chaos-monkey-spring-boot:$chaosMonkeyVersion"
             testCompile 'org.springframework.boot:spring-boot-starter-test'
         }
