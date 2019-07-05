@@ -3,5 +3,6 @@ description = 'timesheets'
 dependencies {
     implementation project(':components:rest-support')
     implementation "org.slf4j:slf4j-api:$slf4jVersion"
+    implementation "org.springframework.boot:spring-boot-actuator:$springBootVersion"
 }
 
