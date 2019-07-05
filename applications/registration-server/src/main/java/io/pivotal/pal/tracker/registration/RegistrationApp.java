@@ -35,13 +35,13 @@ public class RegistrationApp {
     }
 
     @PostConstruct
-    public void init() {
+    public void init(){
         // Make sure there is data in the registration server when
         // it starts.
         ProjectFields project = projectFieldsBuilder()
-                .accountId(1)
-                .name("Basket Weaving")
-                .build();
+                                    .accountId(1)
+                                    .name("Basket Weaving")
+                                    .build();
         logger.info("**********************************");
         logger.info("Creating project: " + project);
         logger.info("**********************************");

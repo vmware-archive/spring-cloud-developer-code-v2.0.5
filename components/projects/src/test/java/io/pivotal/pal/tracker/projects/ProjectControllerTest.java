@@ -38,8 +38,8 @@ public class ProjectControllerTest {
     @Test
     public void testList() {
         List<ProjectRecord> records = asList(
-                testProjectRecordBuilder().id(12).build(),
-                testProjectRecordBuilder().id(13).build()
+            testProjectRecordBuilder().id(12).build(),
+            testProjectRecordBuilder().id(13).build()
         );
         doReturn(records).when(gateway).findAllByAccountId(anyLong());
 
