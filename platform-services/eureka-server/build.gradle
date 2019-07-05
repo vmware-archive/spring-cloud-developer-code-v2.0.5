@@ -1,0 +1,10 @@
+description = 'eureka-server'
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+
+    // JAXB dependencies for Java 11
+    implementation "com.sun.xml.bind:jaxb-core:$jaxbCoreVersion"
+    implementation "javax.xml.bind:jaxb-api:$jaxbVersion"
+    implementation "com.sun.xml.bind:jaxb-impl:$jaxbVersion"
+}
